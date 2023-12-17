@@ -1,4 +1,3 @@
-vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -33,8 +32,8 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+-- vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
+-- vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
@@ -49,23 +48,26 @@ vim.keymap.set("n", "<leader><leader>", function()
 end)
 
 -- Pane and Window Navigation
-vim.keymap.set("n", "<C-h>", "<C-w>h") -- Navigate Left
-vim.keymap.set("n", "<C-j>", "<C-w>j") -- Navigate Down
-vim.keymap.set("n", "<C-k>", "<C-w>k") -- Navigate Up
-vim.keymap.set("n", "<C-l>", "<C-w>l") -- Navigate Right
-vim.keymap.set("t", "<C-h>", "wincmd h") -- Navigate Left
-vim.keymap.set("t", "<C-j>", "wincmd j") -- Navigate Down
-vim.keymap.set("t", "<C-k>", "wincmd k") -- Navigate Up
-vim.keymap.set("t", "<C-l>", "wincmd l") -- Navigate Right
-vim.keymap.set("n", "<C-h>", "TmuxNavigateLeft") -- Navigate Left
-vim.keymap.set("n", "<C-j>", "TmuxNavigateDown") -- Navigate Down
-vim.keymap.set("n", "<C-k>", "TmuxNavigateUp") -- Navigate Up
-vim.keymap.set("n", "<C-l>", "TmuxNavigateRight") -- Navigate Right
+--vim.keymap.set("n", "<C-h>", "<C-w>h") -- Navigate Left
+--vim.keymap.set("n", "<C-j>", "<C-w>j") -- Navigate Down
+--vim.keymap.set("n", "<C-k>", "<C-w>k") -- Navigate Up
+--vim.keymap.set("n", "<C-l>", "<C-w>l") -- Navigate Right
+--vim.keymap.set("t", "<C-h>", "wincmd h") -- Navigate Left
+--vim.keymap.set("t", "<C-j>", "wincmd j") -- Navigate Down
+--vim.keymap.set("t", "<C-k>", "wincmd k") -- Navigate Up
+--vim.keymap.set("t", "<C-l>", "wincmd l") -- Navigate Right
+--vim.keymap.set("n", "<C-h>", "TmuxNavigateLeft") -- Navigate Left
+--vim.keymap.set("n", "<C-j>", "TmuxNavigateDown") -- Navigate Down
+--vim.keymap.set("n", "<C-k>", "TmuxNavigateUp") -- Navigate Up
+--vim.keymap.set("n", "<C-l>", "TmuxNavigateRight") -- Navigate Right
 
--- Window Management
+---- Window Management
 vim.keymap.set("n", "<leader>sv", "vsplit") -- Split Vertically
 vim.keymap.set("n", "<leader>sh", "split") -- Split Horizontally
-
--- Indenting
---vim.keymap.set("<", "v", "<gv") -- Shift Indentation to Left
---vim.keymap.set(">", "v", ">gv") -- Shift Indentation to Right
+--
+vim.api.nvim_set_keymap(
+	"v",
+	"<leader>ri",
+	[[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]],
+	{ noremap = true, silent = true, expr = false }
+)
