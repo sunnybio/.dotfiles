@@ -64,6 +64,12 @@ bindsym $mod+Shift+q kill
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
+set $fm DP-1-0
+set $sm HDMI-1-0
+
+
+
+
 
 # change focus
 bindsym $mod+h focus left
@@ -242,7 +248,7 @@ exec xinput set-prop "SYNA32A5:00 06CB:CE17 Touchpad" "libinput Tapping Enabled"
 
 exec xinput set-prop "SYNA32A5:00 06CB:CE17 Touchpad" "libinput Natural Scrolling Enabled" 1
 
-exec_always feh --bg-scale /home/shadowpain/Downloads/wall.jpg
+exec_always feh --bg-scale /home/shadowpain/Pictures/wallpaper3.jpg
 bindsym $mod+b exec --no-startup-id rofi-bluetooth
 bindsym $mod+d exec rofi -show run
 
