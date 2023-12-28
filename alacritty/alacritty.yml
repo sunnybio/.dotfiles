@@ -1,4 +1,3 @@
-
 window:
   padding:
     x: 10
@@ -6,7 +5,7 @@ window:
   class:
     instance: Alacritty
     general: Alacritty
-  opacity: .7
+  opacity: .4
 
 scrolling:
   history: 10000
@@ -15,13 +14,13 @@ scrolling:
 font:
   normal:
     family: FiraMono Nerd Font
-    style:  Regular
+    style: Regular
   bold:
     family: FiraMono Nerd Font
-    style:  Bold
+    style: Bold
   italic:
     family: FiraMono Nerd Font
-    style:  Italic
+    style: Italic
   bold_italic:
     family: FiraMono Nerd Font
     style: Bold Italic
@@ -29,14 +28,14 @@ font:
 draw_bold_text_with_bright_colors: true
 
 import:
-  - ~/.config/alacritty/rose-pine.yml
+  - ~/.config/alacritty/tokyo-night.yml
 
 selection:
   save_to_clipboard: false
 
 shell:
   program: /usr/bin/zsh
-  program: /usr/bin/tmux
+  #  program: /usr/bin/tmux
 
 key_bindings:
   - { key: Return, mods: Super|Shift, action: SpawnNewInstance }
